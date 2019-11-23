@@ -20,3 +20,21 @@
   background-color: #191919;
 }
 
+.App-NavBar {
+  height: 72px;
+  background-color: #7b7b7b;
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar table {
+  width: 100%;
+}
+
+.event {
+  background-color: green;;
+}
+
+.first {
+  width: 5%;
+}
