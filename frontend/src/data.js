@@ -31,6 +31,8 @@ export const offers2 = [
             },
             totalPrice: 12.99,
             isTaxi: false,
+            isDriver: true,
+            numberFellowPassengers: 1,
         },
         {
             startTime: getDateOfHours(11, 30),
@@ -45,8 +47,10 @@ export const offers2 = [
                 lat: 48.26504,
                 lng: 11.6693806
             },
-            isTaxi: false,
             totalPrice: 10.50,
+            isTaxi: false,
+            isDriver: true,
+            numberFellowPassengers: 2,
         },
     ]
 ]
@@ -78,6 +82,8 @@ export const offers = [
             },
             totalPrice: 16.46,
             isTaxi: true,
+            isDriver: false,
+            numberFellowPassengers: 3,
         },
         {
             startTime: getDateOfHours(17, 51),
@@ -94,6 +100,8 @@ export const offers = [
             },
             totalPrice: 18.29,
             isTaxi: true,
+            isDriver: false,
+            numberFellowPassengers: 1,
         },
     ]
 ]
@@ -125,6 +133,8 @@ export const offers3 = [
             },
             totalPrice: 16.46,
             isTaxi: true,
+            isDriver: false,
+            numberFellowPassengers: 0,
         },
         {
             startTime: getDateOfHours(17, 51),
@@ -141,6 +151,8 @@ export const offers3 = [
             },
             totalPrice: 18.29,
             isTaxi: true,
+            isDriver: false,
+            numberFellowPassengers: 0,
         },
     ]
 ]
