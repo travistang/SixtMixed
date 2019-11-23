@@ -33,6 +33,7 @@ export const offers2 = [
             isTaxi: false,
             isDriver: true,
             numberFellowPassengers: 1,
+            isShared: true,
         },
         {
             startTime: getDateOfHours(11, 30),
@@ -51,6 +52,7 @@ export const offers2 = [
             isTaxi: false,
             isDriver: true,
             numberFellowPassengers: 2,
+            isShared: true,
         },
     ]
 ]
@@ -84,6 +86,7 @@ export const offers = [
             isTaxi: true,
             isDriver: false,
             numberFellowPassengers: 3,
+            isShared: true,
         },
         {
             startTime: getDateOfHours(17, 51),
@@ -102,6 +105,7 @@ export const offers = [
             isTaxi: true,
             isDriver: false,
             numberFellowPassengers: 1,
+            isShared: true,
         },
     ]
 ]
@@ -135,6 +139,7 @@ export const offers3 = [
             isTaxi: true,
             isDriver: false,
             numberFellowPassengers: 0,
+            isShared: false,
         },
         {
             startTime: getDateOfHours(17, 51),
@@ -153,6 +158,7 @@ export const offers3 = [
             isTaxi: true,
             isDriver: false,
             numberFellowPassengers: 0,
+            isShared: false,
         },
     ]
 ]
