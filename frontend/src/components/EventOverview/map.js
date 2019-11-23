@@ -15,7 +15,10 @@ export default function Map({
     const [mapCenter, setMapCenter] = React.useState(centerOfMap)
     return (
         <div style={{flex: 3, width: '100vw', color: 'black'}}>
-            <HereMap appId={appId} appCode={appKey} useHTTPS={false} center={mapCenter}>
+            <HereMap 
+                appId={appId} appCode={appKey} useHTTPS={false} 
+                zoom={11}
+                center={mapCenter}>
                 <Marker {...startLocation}>
                     Start
                 </Marker>

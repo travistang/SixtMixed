@@ -1,14 +1,16 @@
 import React from 'react';
 import NavBar from './components/NavBar';
-import EventOverview from './components/EventOverview';
+import OfferList from './components/OfferList';
 import './App.css';
+
+const events = [0,1];
 
 function App() {
   return (
     <div className="App">
       <div className="App-MainContainer">
         <div style={{flex: 1}} />
-        <EventOverview />
+        <OfferList events={events} />
       </div>
       <NavBar />
     </div>

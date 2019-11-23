@@ -1,15 +1,9 @@
 .EventOverview-Container {
-    flex: 2;
     display: flex;
+    min-width: 100%;
+    flex: 1;
     flex-direction: column;
-    padding-top: 12px;
-    
-}
-
-.EventOverview-AvailableText {
-    padding-left: 12px;
-    padding-right:12px;
-    padding-bottom: 8px;
+    border-top: 1px solid #7b7b7b;
 }
 
 .EventOverview-Row {
@@ -19,6 +13,7 @@
     padding-left: 12px;
     padding-right:12px;
 }
+
 .EventOverview-LocationContainer {
     flex: 8;
     display: flex;
@@ -27,8 +22,7 @@
 }
 
 .EventOverview-Separator {
-    padding-top: 12px;
-    border-top: 1px solid #7b7b7b;
+    padding-top: 22px;
 }
 
 .EventOverview-LocationContainerInner {

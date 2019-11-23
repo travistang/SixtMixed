@@ -5,10 +5,13 @@ import SmallDescription from './smallDescription';
 import DetailsWithIcons from './detailsWithIcons';
 import Button from '../Button';
 import Map from './map';
-
+import { geolocated } from "react-geolocated";
 import { timeToString, timeInMinutes, addMinutesToTime } from '../../utils';
 
-export default function EventOverview({
+function EventOverview({
+    // geolocated
+    isGeolocationAvailable,
+    coords,
     // event info
     title     = 'Some event',
     nextEventTime = addMinutesToTime(new Date(), 50),
@@ -37,14 +40,11 @@ export default function EventOverview({
 
     return (
         <div className="EventOverview-Container">
-            <div className="EventOverview-AvailableText">
-                {totalOffersAvailable} Offer(s) available
-            </div>
             <Map
                 startLocation={startLocationCoordinate}
                 endLocation={destinationCoordinate}
             />
-            
+
             <div className="EventOverview-Row EventOverview-Separator">
                 <CommuteLogo />
                 <div className="EventOverview-LocationContainer">
@@ -83,3 +83,9 @@ export default function EventOverview({
         </div>
     );
 }
+
+export default geolocated({
+    positionOptions: {
+        enableHighAccuracy: false,
+    }
+})(EventOverview);
