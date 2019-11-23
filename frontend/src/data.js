@@ -1,5 +1,8 @@
 import { getDateOfHours } from './utils';
 
+/*
+    This is the calendar!
+*/
 export const events = [
     {
         startTime: getDateOfHours(11, 40), 
@@ -25,9 +28,10 @@ export const offers = [
                 lng: 11.6693806
             },
             totalPrice: 12.99,
+            isTaxi: false,
         },
         {
-            startTime: getDateOfHours(11, 20),
+            startTime: getDateOfHours(11, 30),
             endTime: getDateOfHours(11, 50),
             startLocation: "Giesing",
             startLocationCoordinate: { 
@@ -39,7 +43,8 @@ export const offers = [
                 lat: 48.26504,
                 lng: 11.6693806
             },
-            totalPrice: 10,
-        }
+            isTaxi: false,
+            totalPrice: 10.50,
+        },
     ]
 ]
