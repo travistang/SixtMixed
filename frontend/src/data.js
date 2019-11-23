@@ -57,59 +57,6 @@ export const offers2 = [
     ]
 ]
 
-//ontime, with taxi
-export const events = [
-    {
-        startTime: getDateOfHours(18, 10), 
-        endTime: getDateOfHours(19, 30),
-        title: "Dinner", 
-        location:"Augustiner-Keller, Arnulfstraße 52, 80335 München",
-    }
-];
-
-export const offers = [
-    [
-        {
-            startTime: getDateOfHours(17, 56),
-            endTime: getDateOfHours(18, 7),
-            startLocation: "Bavarian state library, Ludwigstraße 16, 80539 München",
-            startLocationCoordinate: { 
-                lat: 48.1474093,
-                lng: 11.578423,
-            },
-            destination: "Augustiner-Keller, Arnulfstraße 52, 80335 München",
-            destinationCoordinate: {
-                lat: 48.1435227,
-                lng: 11.5492731,
-            },
-            totalPrice: 16.46,
-            isTaxi: true,
-            isDriver: false,
-            numberFellowPassengers: 3,
-            isShared: true,
-        },
-        {
-            startTime: getDateOfHours(17, 51),
-            endTime: getDateOfHours(18, 5),
-            startLocation: "Bavarian state library, Ludwigstraße 16, 80539 München",
-            startLocationCoordinate: { 
-                lat: 48.1474093,
-                lng: 11.578423,
-            },
-            destination: "Augustiner-Keller, Arnulfstraße 52, 80335 München",
-            destinationCoordinate: {
-                lat: 48.1435227,
-                lng: 11.5492731,
-            },
-            totalPrice: 18.29,
-            isTaxi: true,
-            isDriver: false,
-            numberFellowPassengers: 1,
-            isShared: true,
-        },
-    ]
-]
-
 //delayed, with taxi
 export const events3 = [
     {
@@ -162,3 +109,59 @@ export const offers3 = [
         },
     ]
 ]
+
+//ontime, with taxi
+export const events = [
+    {
+        startTime: getDateOfHours(18, 10), 
+        endTime: getDateOfHours(19, 30),
+        title: "Dinner", 
+        location:"Augustiner-Keller, Arnulfstraße 52, 80335 München",
+    },
+    ...events2,
+    ...events3
+];
+
+export const offers = [
+    [
+        {
+            startTime: getDateOfHours(17, 56),
+            endTime: getDateOfHours(18, 7),
+            startLocation: "Bavarian state library, Ludwigstraße 16, 80539 München",
+            startLocationCoordinate: { 
+                lat: 48.1474093,
+                lng: 11.578423,
+            },
+            destination: "Augustiner-Keller, Arnulfstraße 52, 80335 München",
+            destinationCoordinate: {
+                lat: 48.1435227,
+                lng: 11.5492731,
+            },
+            totalPrice: 16.46,
+            isTaxi: true,
+            isDriver: false,
+            numberFellowPassengers: 3,
+            isShared: true,
+        },
+        {
+            startTime: getDateOfHours(17, 51),
+            endTime: getDateOfHours(18, 5),
+            startLocation: "Bavarian state library, Ludwigstraße 16, 80539 München",
+            startLocationCoordinate: { 
+                lat: 48.1474093,
+                lng: 11.578423,
+            },
+            destination: "Augustiner-Keller, Arnulfstraße 52, 80335 München",
+            destinationCoordinate: {
+                lat: 48.1435227,
+                lng: 11.5492731,
+            },
+            totalPrice: 18.29,
+            isTaxi: true,
+            isDriver: false,
+            numberFellowPassengers: 1,
+            isShared: true,
+        },
+    ], ...offers2, ...offers3
+]
+

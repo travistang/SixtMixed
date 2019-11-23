@@ -103,15 +103,42 @@
 .Modal-Location-Container {
   display: flex;
   flex-direction: column;
+  margin-left: 8px;
 }
 
 .Modal-Location {
   flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 .Modal-Details {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
+  flex-direction: row;
+  font-size: 24px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  justify-content: space-between;
+  /* height: 20px; */
+}
+
+.Modal-InfoContainer {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.Modal-DetailsKey {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  font-size: 14px;
+}
+
+.Modal-DetailsValue {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  font-size: 14px;
 }

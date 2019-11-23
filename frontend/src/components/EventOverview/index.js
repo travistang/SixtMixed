@@ -18,9 +18,9 @@ function EventOverview({
     destinationCoordinate,
     startTime,
     endTime,
-    totalPrice = 10,
-    // general info
-    totalOffersAvailable = 1
+    totalPrice,
+    isTaxi,
+    numberFellowPassengers
 }) {
 
     const [useSixtMixed, setUseSixtMixed ] = React.useState(false);
@@ -50,15 +50,21 @@ function EventOverview({
                 </div>
                 <div className="EventOverview-Duration">
                     <SmallDescription 
+                            label="Type" 
+                            value={isTaxi?"Ride":"Share"} />
+                    <SmallDescription 
                         label="Time to leave" 
                         value={`${timeToLeave} Mins`} />
                 </div>
             </div>
-            <div className="EventOverview-Row">
+            <div className="EventOverview-Row EventOverview-RowSummary">
                 <DetailsWithIcons
                     iconName="euro"
                     value={totalPrice.toFixed(2)} />
-                <div style={{flex: 1}} />
+                <DetailsWithIcons
+                    iconName="people"
+                    value={numberFellowPassengers}
+                />
                 <DetailsWithIcons
                     iconName="directions_run"
                     style={isLate ? {color: '#ff5f00'}: {color: 'white'}}

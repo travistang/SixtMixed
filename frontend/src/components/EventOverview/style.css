@@ -9,9 +9,14 @@
 .EventOverview-Row {
     flex: 1;
     display: flex;
+    
     flex-direction: row;
     padding-left: 12px;
     padding-right:12px;
+}
+
+.EventOverview-RowSummary {
+    justify-content: space-between;
 }
 
 .EventOverview-LocationContainer {
@@ -20,6 +25,7 @@
     flex-direction: column;
     justify-content: center;
     text-overflow: ellipsis;
+    font-size: 14px;
 }
 
 .EventOverview-Separator {
@@ -36,8 +42,8 @@
 .EventOverview-Duration {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .EventOverview-SmallDescription {
