@@ -3,10 +3,9 @@ import './style.css';
 import CommuteLogo from '../CommuteLogo';
 import SmallDescription from './smallDescription';
 import DetailsWithIcons from './detailsWithIcons';
-import Button from '../Button';
+import Icon from '@material-ui/core/Icon';
 import Map from './map';
-import { geolocated } from "react-geolocated";
-import { timeToString, timeInMinutes, addMinutesToTime } from '../../utils';
+import { timeToString, timeInMinutes } from '../../utils';
 
 function EventOverview({
     // the event we are trying to attend
@@ -24,6 +23,7 @@ function EventOverview({
     totalOffersAvailable = 1
 }) {
 
+    const [useSixtMixed, setUseSixtMixed ] = React.useState(false);
     const timeToLeave = timeInMinutes(startTime - new Date());
     // const timeToLeave = timeInMinutes(startTime - new Date());
     const arrivedTimeBeforeEvent = timeInMinutes(event.startTime - endTime);
@@ -32,6 +32,7 @@ function EventOverview({
     return (
         <div className="EventOverview-Container">
             <Map
+                useSixtMixed={useSixtMixed}
                 startLocation={startLocationCoordinate}
                 endLocation={destinationCoordinate}
             />
@@ -70,13 +71,19 @@ function EventOverview({
                     iconName="flag" 
                     value={timeToString(endTime)} />
             </div>
+            <div className="EventOverview-Row EventOverview-SixtMixedRow">
+                <div className={`EventOverview-Checkbox`} 
+                    onClick={() => setUseSixtMixed(!useSixtMixed)}>
+                    { useSixtMixed?(
+                        <Icon>done</Icon>
+                    ): null}
+                    
+                </div>
+                Open ride for Sixt Mixed2Go
+            </div>
             
         </div>
     );
 }
 
-export default geolocated({
-    positionOptions: {
-        enableHighAccuracy: false,
-    }
-})(EventOverview);
+export default EventOverview;

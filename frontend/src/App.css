@@ -81,3 +81,37 @@
 .location {
   font-size: 12px;
 }
+
+.Modal-Container {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  flex-direction: column;
+  
+  display: flex;
+  flex-direction: column;
+
+  background-color: black;
+  color: white;
+  font-family: 'Oswald';
+  font-size: 24px;
+  text-transform: uppercase;
+  
+}
+.Modal-Location-Container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Modal-Location {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.Modal-Details {
+  flex: 1;
+  display: flex;
+}

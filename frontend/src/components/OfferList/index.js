@@ -4,7 +4,7 @@ import SwipeableViews from 'react-swipeable-views';
 import Button from '../Button/index';
 import './style.css';
 
-export default function({ event, offers }) {
+export default function({ event, offers, onOrder }) {
     const [ viewsIndex, setViewsIndex ] = React.useState(0)
     return (
         <div className="OfferList">
@@ -29,7 +29,9 @@ export default function({ event, offers }) {
                 }
                 
             </SwipeableViews>
-            <Button text="Book now" />
+            <Button
+                onClick={() => onOrder(offers[viewsIndex])} 
+                text="Book now" />
 
         </div>
     )

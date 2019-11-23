@@ -5,6 +5,7 @@ const appId = "KXRCvuSB65cu38w7DCS5";
 const appKey = "jmigwTkaN2pWzxHZypVMSQ";
 
 export default function Map({
+    useSixtMixed,
     startLocation,
     endLocation
 }) {
@@ -12,7 +13,34 @@ export default function Map({
         lat: (startLocation.lat + endLocation.lat) / 2,
         lng: (startLocation.lng + endLocation.lng) / 2,
     }
-    const [mapCenter, setMapCenter] = React.useState(centerOfMap)
+
+    // functions for creating extra points
+    const interpolate = (p1, p2, r) => {
+        return {
+            lat: p1.lat * r + p2.lat * (1 - r),
+            lng: p1.lng * r + p2.lng * (1 - r),
+        }
+    }
+    const extraWaypoints = useSixtMixed?([
+        interpolate(startLocation, endLocation, 0.8),
+        interpolate(startLocation, endLocation, 0.1),
+    ]):[];
+    
+    // combine results
+    const waypoints = [
+        startLocation,
+        ...extraWaypoints,
+        endLocation,
+    ];
+    
+    const pathFinderRef = React.createRef();
+    const [route ,setRoute] = React.useState(null);
+    const onRouteCreated = newRoute => {
+        setRoute(newRoute)
+        // setRoute(newRoute)
+    };
+    
+    const [mapCenter, setMapCenter] = React.useState(centerOfMap);
     return (
         <div style={{flex: 3, width: '100vw', color: 'black'}}>
             <HereMap 
@@ -25,13 +53,21 @@ export default function Map({
                 <Marker {...endLocation}>
                     End
                 </Marker>
-                <PathFinder 
-                    waypoints={[startLocation, endLocation]}
+                {
+                    extraWaypoints.map((p, i) => (
+                        <Marker {...p}>
+                            Pickup point {i + 1}
+                        </Marker>
+                    ))
+                }
+                <PathFinder  
+                    waypoints={waypoints}
                     style={{
-                        lineWidth: 10,
+                        lineWidth: 8,
                         strokeColor: "#ff5f00"
                     }}
                 />
+                
             </HereMap>
         </div>
     )

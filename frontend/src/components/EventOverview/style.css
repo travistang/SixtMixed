@@ -63,3 +63,17 @@
     padding-right: 8px;
     padding-left: 8px;
 }
+
+.EventOverview-Checkbox {
+    border: 2px solid white;
+    height: 24px;
+    width: 24px;
+    margin: 12px;
+    color: #ff5f00;
+}
+
+.EventOverview-SixtMixedRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
