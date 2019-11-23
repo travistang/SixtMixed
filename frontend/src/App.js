@@ -2,16 +2,15 @@ import React from 'react';
 import NavBar from './components/NavBar';
 import OfferList from './components/OfferList';
 import NextEvent from './components/NextEvent';
+import { events, offers } from './data';
 import './App.css';
-
-const events = [0,1];
 
 function App() {
   return (
     <div className="App">
       <div className="App-MainContainer">
-        <NextEvent/>
-        <OfferList events={events} />
+        <NextEvent event={events[0]} />
+        <OfferList event={events[0]} offers={offers[0]} />
       </div>
       <NavBar />
     </div>

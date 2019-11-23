@@ -4,14 +4,12 @@ import SwipeableViews from 'react-swipeable-views';
 import Button from '../Button/index';
 import './style.css';
 
-export default function({ events }) {
+export default function({ event, offers }) {
     const [ viewsIndex, setViewsIndex ] = React.useState(0)
     return (
         <div className="OfferList">
             <div className="OfferList-AvailableText">
-                {events.length} Offer(s) available
-                <div style={{flex: 1}} />
-                {viewsIndex + 1} / {events.length}
+                Here are {viewsIndex + 1} of {offers.length} offer(s) to bring you there:
             </div>
             <SwipeableViews
                 onChangeIndex={setViewsIndex}
@@ -27,7 +25,7 @@ export default function({ events }) {
                 }}
                 className="OfferList-SwipeViews">
                 {
-                    events.map(evt => (<EventOverview {...evt} />))
+                    offers.map(evt => (<EventOverview event={event} {...evt} />))
                 }
                 
             </SwipeableViews>

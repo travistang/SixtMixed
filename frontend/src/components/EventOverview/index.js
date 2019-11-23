@@ -9,33 +9,24 @@ import { geolocated } from "react-geolocated";
 import { timeToString, timeInMinutes, addMinutesToTime } from '../../utils';
 
 function EventOverview({
-    // geolocated
-    isGeolocationAvailable,
-    coords,
-    // event info
-    title     = 'Some event',
-    nextEventTime = addMinutesToTime(new Date(), 50),
-    // journey info
-    startLocation = "Dülferstrasße super long long nameeeeeee",
-    startLocationCoordinate= { 
-        lat: 48.2122201,
-        lng: 11.56014
-    },
-    destination  = "Garching can you be even longer",
-    destinationCoordinate={
-        lat: 48.2494791,
-        lng: 11.6495713
-    },
-    startTime = addMinutesToTime(new Date(), 35),
-    endTime   = addMinutesToTime(new Date(), 60),
-    totalPrice = 10,
+    // the event we are trying to attend
+    event,
 
+    // journey info
+    startLocation,
+    startLocationCoordinate,
+    destination,
+    destinationCoordinate,
+    startTime,
+    endTime,
+    totalPrice = 10,
     // general info
     totalOffersAvailable = 1
 }) {
 
     const timeToLeave = timeInMinutes(startTime - new Date());
-    const arrivedTimeBeforeEvent = timeInMinutes(nextEventTime - endTime);
+    // const timeToLeave = timeInMinutes(startTime - new Date());
+    const arrivedTimeBeforeEvent = timeInMinutes(event.startTime - endTime);
     const isLate = arrivedTimeBeforeEvent < 0;
 
     return (
@@ -65,17 +56,17 @@ function EventOverview({
             <div className="EventOverview-Row">
                 <DetailsWithIcons
                     iconName="euro"
-                    value={totalPrice} />
+                    value={totalPrice.toFixed(2)} />
                 <div style={{flex: 1}} />
                 <DetailsWithIcons
                     iconName="directions_run"
-                    style={isLate && {color: '#ff5f00'}}
+                    style={isLate ? {color: '#ff5f00'}: {color: 'white'}}
                     value={
                         isLate?
                         `${-arrivedTimeBeforeEvent} mins late`:"On time"
                     }
                 />
-                <DetailsWithIcons 
+                <DetailsWithIcons
                     iconName="flag" 
                     value={timeToString(endTime)} />
             </div>
