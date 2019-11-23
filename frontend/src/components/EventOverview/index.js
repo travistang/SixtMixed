@@ -3,8 +3,9 @@ import './style.css';
 import CommuteLogo from '../CommuteLogo';
 import SmallDescription from './smallDescription';
 import DetailsWithIcons from './detailsWithIcons';
-import Icon from '@material-ui/core/Icon';
 import Button from '../Button';
+import Map from './map';
+
 import { timeToString, timeInMinutes, addMinutesToTime } from '../../utils';
 
 export default function EventOverview({
@@ -13,7 +14,15 @@ export default function EventOverview({
     nextEventTime = addMinutesToTime(new Date(), 50),
     // journey info
     startLocation = "Dülferstrasße",
+    startLocationCoordinate= { 
+        lat: 48.2122201,
+        lng: 11.56014
+    },
     destination  = "Garching",
+    destinationCoordinate={
+        lat: 48.2494791,
+        lng: 11.6495713
+    },
     startTime = addMinutesToTime(new Date(), 35),
     endTime   = addMinutesToTime(new Date(), 60),
     totalPrice = 10,
@@ -31,6 +40,11 @@ export default function EventOverview({
             <div className="EventOverview-AvailableText">
                 {totalOffersAvailable} Offer(s) available
             </div>
+            <Map
+                startLocation={startLocationCoordinate}
+                endLocation={destinationCoordinate}
+            />
+            
             <div className="EventOverview-Row EventOverview-Separator">
                 <CommuteLogo />
                 <div className="EventOverview-LocationContainer">

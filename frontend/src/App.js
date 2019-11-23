@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-MainContainer">
-        <div style={{flex: 3}} />
+        <div style={{flex: 1}} />
         <EventOverview />
       </div>
       <NavBar />

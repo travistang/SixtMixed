@@ -7,7 +7,7 @@ export const timeToString = (time) => {
 }
 
 export const timeInMinutes = time => {
-    return Math.round(time) / (60 *  1000);
+    return Math.round(time) / (60 *  1000).toPrecision(2);
 }
 
 export const addMinutesToTime = (time, minutes) => {
