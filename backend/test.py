@@ -86,6 +86,3 @@ def person_3():
     
     calender = [event0, event1, event2]
     return name, calender
-
-
-
