@@ -1,0 +1,27 @@
+
+.App {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+.App-MainContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #191919;
+}
+
+.App-NavBar {
+  height: 72px;
+  background-color: #7b7b7b;
+  display: flex;
+  flex-direction: row;
+}
