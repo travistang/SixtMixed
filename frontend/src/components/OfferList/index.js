@@ -1,6 +1,7 @@
 import React from 'react';
 import EventOverview from '../EventOverview';
 import SwipeableViews from 'react-swipeable-views';
+import Button from '../Button/index';
 import './style.css';
 
 export default function({ events }) {
@@ -30,7 +31,7 @@ export default function({ events }) {
                 }
                 
             </SwipeableViews>
-            
+            <Button text="Book now" />
 
         </div>
     )

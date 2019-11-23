@@ -16,12 +16,12 @@ function EventOverview({
     title     = 'Some event',
     nextEventTime = addMinutesToTime(new Date(), 50),
     // journey info
-    startLocation = "Dülferstrasße",
+    startLocation = "Dülferstrasße super long long nameeeeeee",
     startLocationCoordinate= { 
         lat: 48.2122201,
         lng: 11.56014
     },
-    destination  = "Garching",
+    destination  = "Garching can you be even longer",
     destinationCoordinate={
         lat: 48.2494791,
         lng: 11.6495713
@@ -79,7 +79,7 @@ function EventOverview({
                     iconName="flag" 
                     value={timeToString(endTime)} />
             </div>
-            <Button text="Book now" />
+            
         </div>
     );
 }

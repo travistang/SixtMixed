@@ -1,6 +1,5 @@
 .Button {
     display: flex;
-    flex: 1;
     margin: 12px;
     height: 72px;
     justify-content: center;
