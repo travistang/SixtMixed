@@ -1,0 +1,10 @@
+.App-NavBar {
+    height: 72px;
+    background-color: #7b7b7b;
+    display: flex;
+    flex-direction: row;
+    padding-left: 24px;
+    padding-right: 24px;
+    justify-content: space-between;
+  }
+  
