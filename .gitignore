@@ -24,3 +24,4 @@ yarn-error.log*
 
 # python shit
 /__pycache__
+venv
