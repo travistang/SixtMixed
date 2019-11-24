@@ -32,7 +32,8 @@ function EventOverview({
     const isLate = arrivedTimeBeforeEvent < 0;
 
     let typeText = isTaxi?"Ride":"Share"
-    if (!isDriver) {
+    const isMixedToGo = !isDriver && isShared
+    if (isMixedToGo) {
         typeText += " Mixed"
     }
 
@@ -58,7 +59,7 @@ function EventOverview({
                 <div className="EventOverview-Duration">
                     <SmallDescription 
                             label="Type"
-                            highlightValue={!isDriver}
+                            highlightValue={isMixedToGo}
                             value={typeText} />
                     <SmallDescription 
                         label="Time to leave" 
@@ -86,7 +87,7 @@ function EventOverview({
                     value={timeToString(endTime)} />
             </div>
             {
-                isDriver?(
+                !isMixedToGo?(
                     <div className="EventOverview-Row EventOverview-SixtMixedRow">
                         <div className={`EventOverview-Checkbox`} 
                             onClick={() => setUseSixtMixed(!useSixtMixed)}>

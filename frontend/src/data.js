@@ -50,7 +50,7 @@ export const offers2 = [
             },
             totalPrice: 30.25,
             isTaxi: true,
-            isDriver: false,
+            isDriver: true,
             numberFellowPassengers: 0,
             isShared: false,
         },
@@ -107,6 +107,8 @@ export const offers3 = [
             numberFellowPassengers: 0,
             isShared: false,
         },
+
+
     ]
 ]
 
@@ -159,6 +161,25 @@ export const offers = [
             totalPrice: 11.40,
             isTaxi: false,
             isDriver: true,
+            numberFellowPassengers: 0,
+            isShared: false,
+        },
+        {
+            startTime: getDateOfHours(11, 10),
+            endTime: getDateOfHours(11, 18),
+            startLocation: "Bavarian state library, Ludwigstraße 16, 80539 München",
+            startLocationCoordinate: { 
+                lat: 48.1474093,
+                lng: 11.578423,
+            },
+            destination: "Boltzmannstraße 3, 85748 Garching",
+            destinationCoordinate: {
+                lat: 48.26504,
+                lng: 11.6693806
+            },
+            totalPrice: 25.40,
+            isTaxi: true,
+            isDriver: false,
             numberFellowPassengers: 0,
             isShared: false,
         },
