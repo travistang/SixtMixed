@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "23b3a3abeac1ff62a1666725fb1e7c09",
+    "revision": "4c7445c9138dae034216e4b103a1f7fa",
     "url": "/SixtMixed/index.html"
   },
   {
-    "revision": "f49f35ae23200727b61b",
+    "revision": "f84b571571690e75b48a",
     "url": "/SixtMixed/static/css/main.7e579839.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SixtMixed/static/js/2.dbc4a316.chunk.js"
   },
   {
-    "revision": "f49f35ae23200727b61b",
-    "url": "/SixtMixed/static/js/main.4359aa05.chunk.js"
+    "revision": "f84b571571690e75b48a",
+    "url": "/SixtMixed/static/js/main.cbab30c2.chunk.js"
   },
   {
     "revision": "fa966bd6541f48fe02e7",
