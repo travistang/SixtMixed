@@ -1,4 +1,3 @@
 # SixtMixed
 
-
-https://sixtmixed.azurewebsites.net/person/1
+Nice respository for the Sixt Mixed project
