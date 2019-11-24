@@ -20,6 +20,8 @@ function EventOverview({
     endTime,
     totalPrice,
     isTaxi,
+    isDriver,
+    isShared,
     numberFellowPassengers
 }) {
 
@@ -28,6 +30,11 @@ function EventOverview({
     // const timeToLeave = timeInMinutes(startTime - new Date());
     const arrivedTimeBeforeEvent = timeInMinutes(event.startTime - endTime);
     const isLate = arrivedTimeBeforeEvent < 0;
+
+    let typeText = isTaxi?"Ride":"Share"
+    if (!isDriver) {
+        typeText += " Mixed"
+    }
 
     return (
         <div className="EventOverview-Container">
@@ -50,8 +57,9 @@ function EventOverview({
                 </div>
                 <div className="EventOverview-Duration">
                     <SmallDescription 
-                            label="Type" 
-                            value={isTaxi?"Ride":"Share"} />
+                            label="Type"
+                            highlightValue={!isDriver}
+                            value={typeText} />
                     <SmallDescription 
                         label="Time to leave" 
                         value={`${timeToLeave} Mins`} />
@@ -77,16 +85,26 @@ function EventOverview({
                     iconName="flag" 
                     value={timeToString(endTime)} />
             </div>
-            <div className="EventOverview-Row EventOverview-SixtMixedRow">
-                <div className={`EventOverview-Checkbox`} 
-                    onClick={() => setUseSixtMixed(!useSixtMixed)}>
-                    { useSixtMixed?(
-                        <Icon>done</Icon>
-                    ): null}
-                    
-                </div>
-                Open ride for Sixt Mixed2Go
-            </div>
+            {
+                isDriver?(
+                    <div className="EventOverview-Row EventOverview-SixtMixedRow">
+                        <div className={`EventOverview-Checkbox`} 
+                            onClick={() => setUseSixtMixed(!useSixtMixed)}>
+                            { useSixtMixed?(
+                                <Icon>done</Icon>
+                            ): null}
+                            
+                        </div>
+                        Open ride for Sixt Mixed2Go
+                    </div>
+                ):(
+                    <div style={{ paddingLeft: 24}}
+                        className="eventOverview-Row EventOverview-SixtMixedRow">
+                        You are riding with <p style={{paddingLeft: 4, color: '#ff5f00'}}>Alice</p>
+                    </div>
+                )
+            }
+            
             
         </div>
     );

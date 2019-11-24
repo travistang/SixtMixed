@@ -20,12 +20,10 @@ export const hourToString = (hr, mins = 0) => {
     return `${pad(hr)}:${pad(mins)}`
 }
 
-export const getDateOfHours = (hr, mins = null) => {
+export const getDateOfHours = (hr, mins = 0) => {
     const date = new Date();
     date.setHours(hr);
-    if(mins) {
-        date.setMinutes(mins);
-    }
+    date.setMinutes(mins);
     return date;
 }
 

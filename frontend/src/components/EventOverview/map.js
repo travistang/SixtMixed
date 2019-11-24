@@ -21,24 +21,12 @@ export default function Map({
             lng: p1.lng * r + p2.lng * (1 - r),
         }
     }
-    const extraWaypoints = useSixtMixed?([
-        interpolate(startLocation, endLocation, 0.8),
-        interpolate(startLocation, endLocation, 0.1),
-    ]):[];
     
     // combine results
     const waypoints = [
         startLocation,
-        ...extraWaypoints,
         endLocation,
     ];
-    
-    const pathFinderRef = React.createRef();
-    const [route ,setRoute] = React.useState(null);
-    const onRouteCreated = newRoute => {
-        setRoute(newRoute)
-        // setRoute(newRoute)
-    };
     
     const [mapCenter, setMapCenter] = React.useState(centerOfMap);
     return (
@@ -53,13 +41,6 @@ export default function Map({
                 <Marker {...endLocation}>
                     End
                 </Marker>
-                {
-                    extraWaypoints.map((p, i) => (
-                        <Marker {...p}>
-                            Pickup point {i + 1}
-                        </Marker>
-                    ))
-                }
                 <PathFinder  
                     waypoints={waypoints}
                     style={{

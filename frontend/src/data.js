@@ -17,7 +17,7 @@ export const events2 = [
 export const offers2 = [
     [
         {
-            startTime: getDateOfHours(11),
+            startTime: getDateOfHours(11, 0),
             endTime: getDateOfHours(11, 20),
             startLocation: "Giesing",
             startLocationCoordinate: { 

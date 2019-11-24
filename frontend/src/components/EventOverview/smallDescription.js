@@ -1,12 +1,14 @@
 import React from 'react'
 
-export default function SmallDescription({label, value}) {
+export default function SmallDescription({label, value, highlightValue}) {
     return (
         <div className="EventOverview-SmallDescription">
             <div className="EventOverview-SmallDescriptionTitle">
                 {label}
             </div>
-            <div className="EventOverview-SmallDescriptionValue">
+            <div 
+                style={{color: highlightValue?"green":"white"}} 
+                className="EventOverview-SmallDescriptionValue">
                 {value}
             </div>
         </div>
